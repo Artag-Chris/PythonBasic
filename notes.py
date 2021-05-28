@@ -96,7 +96,7 @@ def PrintMatriz(FullAproveInfo):
         print(FullAproveInfo[i][j], end=" ")
     print()
 """
-Txt = open("clase 1.txt", "w")
+open("clase 1.Txt = txt", "w")
 """
 for i in AproveStudentsNames:
 for i in ReproveStudentsNames:
@@ -105,6 +105,6 @@ Txt.write(f" estos son los estudiantes aprobados {AproveStudentsNames}  \n")
 
 Txt.close()
 Txt = open("clase 1.txt", "a")
-Txt.write(f" estos son los reprobados: {ReproveStudents}")
+Txt.write(f" estos son los reprobados: {ReproveStudentsNames}")
 Txt.close()
 print("gracias por el tiempo ty")
