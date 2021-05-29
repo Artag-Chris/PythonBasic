@@ -1,11 +1,12 @@
 ValorCredito = float(input("escriba el valor del credito "))
-ValorInteresAnual = 0.10
+ValorInteresAnual = 0.13
 TiempoDelCredito = float(input("escriba el tiempo de meses a pagar "))
 ValorInteresMensual= ValorInteresAnual/12
-Interes = (1000000*0.10)/12
+
 i=1
 CuotaSinInteres = 0
 Interes = (ValorCredito*ValorInteresAnual)/12
+print(Interes)
 CuotaFija = (ValorCredito* (ValorInteresMensual * (1 + ValorInteresMensual)** TiempoDelCredito)) / (((1 + ValorInteresMensual)** TiempoDelCredito) - 1)
 print(CuotaFija)
 while i <= TiempoDelCredito:
