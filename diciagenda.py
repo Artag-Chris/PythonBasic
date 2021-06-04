@@ -14,6 +14,7 @@ while isMenuActive==True:
     op=(int(input()))
     print(op)
     if op==1:
+        isAddItem=True
         while isAddItem==True:
             idContacto=input("Id del contacto : ")
             nombre=input("Nombre del contacto : ")
