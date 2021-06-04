@@ -6,7 +6,7 @@ isAddProducto=True
 isAddProveedor=True
 op=0
 while isActivateMenu==True:
-    print("1.Ingresar Producto\n2.Ingresar Proveedor\n3.Ver proveedor por producto\n4.Comprar\n5.Listar Productos\n6.Calcular compra total\n7.Salir")
+    print("1.Ingresar Producto\n2.Ingresar Proveedor\n3.Ver proveedor por producto\n4.Comprar\n5.Listar Productos\n6.Salir")
     op=int(input())
     if op==1:
         isAddProducto=True
@@ -59,7 +59,6 @@ while isActivateMenu==True:
             palabra=input("Ingrese el codigo del producto a Comprar : ")
             cantidad=int(input("Ingrese Cantidad a Comprar : "))
             provid=input("Ingrese el codigo del Proveedor : ")
-            valorc=float(input("Ingrese Cantidad a Comprar : "))
             isFound=False
             for producto in inventario:
                 if palabra.upper() in producto:
@@ -67,10 +66,9 @@ while isActivateMenu==True:
                         if provid in prov:
                             isFound=True
                     if isFound==True:
-                        buy=([producto[0],producto[1],cantidad,valorc,provid])
-                        if producto[3]!=valorc:
-                            producto[3]=valorc
+                        buy=([palabra,cantidad,provid])
                         compras.append(buy)
+                        print(compras)
                     else:
                         print("No se puede comprar")
             rta=input("Desea registrar otra compra S o N")
@@ -82,14 +80,6 @@ while isActivateMenu==True:
         for item in inventario:
             print(f"Codigo : {item[0]} Nombre Producto: {item[1]} Cantidad Disponible : {item[2]} Valor Unitario : {item[3]}",end="\n")
     elif op==6:
-        totalcompra=0
-        header=["Codigo","Nombre del producto","Cantidad","Valor Unit","Subtotal"]
-        print(f"{header[0]} {header[1]} {header[2]} {header[3]} {header[4]}")
-        for buy in compras:
-            print(f"{buy[0].ljust(6)} {buy[1].ljust(19)} {str(buy[2]).ljust(8)} {str(buy[3]).ljust(10)} {(buy[2]*buy[3])}",end="\n")
-            totalcompra=totalcompra+(buy[2]*buy[3])
-        print(f"Total de la Compra : {totalcompra}")      
-    elif op==7:
         rta=input("Desea Abandonar el Programa S o N : ")
         if rta.upper()=="S":
             isActivateMenu=False
