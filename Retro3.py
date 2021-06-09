@@ -4,9 +4,12 @@ equipoParticipante=[]
 provicional=[]
 #lista de fechas
 fechas=[]
-
+#necesito encontrar la forma de hacer un sort o sorted al diccionario o entontrar una forma
 #encontrar la falla en el registrar equipos que solo permite ingresar 2 seguidos
 #organizar front-end
+def valores(*args):
+    for i in args:
+        print(f" Equipo {i[1]} sus datos son {i[6]} ") 
 isActivateMenu=True
 isAddEquipo=True
 isAddProveedor=True
@@ -94,50 +97,91 @@ while isActivateMenu==True:
     elif op==2:
         #menu donde registrare los puntos par cada equipo y las fechas quedaran registradas en su propia gran lista
         fecha=input("Ingrese la fecha en orden numerico : ")
+        equipoA=""
         equipoA=input("Ingrese el id del equipo que juega como en casa : ")
-        golesA=input("Ingrese la cantidad de goles que lograron : ")
+        golesA=int(input("Ingrese la cantidad de goles que lograron : "))
+        equipoB=""
         equipoB=input("Ingrese el id del equipo que juega como visitante : ")
-        golesB=input("Ingrese la cantidad de goles que lograron : ")
+        golesB=int(input("Ingrese la cantidad de goles que lograron : "))
         if golesA > golesB:
             print(f" el equipo ganador es equipo {equipoA} con {golesA} recibira +3 puntos  ")
+            jornada=[]
             jornada=[fecha,equipoA.upper(),golesA,equipoB.upper(),golesB]
             fechas.append(jornada)
             for item in equipo:
                 if equipoA.upper() in item:
                     item[5].extend([3])
+                    contadorPartidos = len(item[5])
+                    contadorGanados = item[5].count(3)
+                    contadorPerdidos = item[5].count(0)
+                    contadorEmpatados = item[5].count(1)
+
+                    item[6].update({"Partidos jugados": contadorPartidos, "partidos ganados": contadorGanados, "Partidos Perdidos":contadorPerdidos,"Partidos empatados":contadorEmpatados,"Total Goles":+golesA})
                    
                   
             #me invente este ciclo por separado para buscar la id del equipo perdedor y colocarle su +0
             for item in equipo:
                 if equipoB.upper() in item:
                     item[5].extend([0])
+                    contadorPartidos = len(item[5])
+                    contadorGanados = item[5].count(3)
+                    contadorPerdidos = item[5].count(0)
+                    contadorEmpatados = item[5].count(1)
+                    item[6].update({"Partidos jugados": contadorPartidos, "partidos ganados": contadorGanados, "Partidos Perdidos":contadorPerdidos,"Partidos empatados":contadorEmpatados,"Total Goles":+golesB})
                     print(equipo)
         elif golesA < golesB:
             print(f" el equipo ganador es equipo {equipoB} con {golesB} recibira +3 puntos  ")
+            jornada=[]
             jornada=[fecha,equipoA.upper(),golesA,equipoB.upper(),golesB]
             fechas.append(jornada)
             for item in equipo:
                 if equipoB.upper() in item:
                     item[5].extend([3])
+                    contadorPartidos = len(item[5])
+                    contadorGanados = item[5].count(3)
+                    contadorPerdidos = item[5].count(0)
+                    contadorEmpatados = item[5].count(1)
+
+                    item[6].update({"Partidos jugados": contadorPartidos, "partidos ganados": contadorGanados, "Partidos Perdidos":contadorPerdidos,"Partidos empatados":contadorEmpatados,"Total Goles":+golesB})
                    
 
-                for item in equipo:
-                    if equipoA.upper() in item:
-                        item[5].extend([0])
-                        print(equipo)
+            for item in equipo:
+                if equipoA.upper() in item:
+                    item[5].extend([0])
+
+                    contadorPartidos = len(item[5])
+                    contadorGanados = item[5].count(3)
+                    contadorPerdidos = item[5].count(0)
+                    contadorEmpatados = item[5].count(1)
+
+                    item[6].update({"Partidos jugados": contadorPartidos, "partidos ganados": contadorGanados, "Partidos Perdidos":contadorPerdidos,"Partidos empatados":contadorEmpatados,"Total Goles":+golesA})
+                    print(equipo)
                 
         elif golesA == golesB:
             print(f" los equipos empataron y ambos recibiran +1 punto ")
+            jornada=[]
             jornada=[fecha,equipoA.upper(),golesA,equipoB.upper(),golesB]
             fechas.append(jornada)
             for item in equipo:
                 if equipoB.upper() in item:
                     item[5].extend([1])
+                    contadorPartidos = len(item[5])
+                    contadorGanados = item[5].count(3)
+                    contadorPerdidos = item[5].count(0)
+                    contadorEmpatados = item[5].count(1)
+
+                    item[6].update({"Partidos jugados": contadorPartidos, "partidos ganados": contadorGanados, "Partidos Perdidos":contadorPerdidos,"Partidos empatados":contadorEmpatados,"Total Goles":+golesA})
                     
                 
             for item in equipo:
                 if equipoA.upper() in item:
                     item[5].extend([1])
+                    contadorPartidos = len(item[5])
+                    contadorGanados = item[5].count(3)
+                    contadorPerdidos = item[5].count(0)
+                    contadorEmpatados = item[5].count(1)
+
+                    item[6].update({"Partidos jugados": contadorPartidos, "partidos ganados": contadorGanados, "Partidos Perdidos":contadorPerdidos,"Partidos empatados":contadorEmpatados,"Total Goles":+golesA})
       
                     print(equipo)
 
@@ -149,8 +193,10 @@ while isActivateMenu==True:
                 print(f"lista de jugadores para {palabra.upper()} {item[4]} ")
                 
     elif op==4:
-        print("En construccion")     
+        #tabla de posiciones
+        print(valores(*equipo))     
     elif op==5:
+        #mas ganados y perdidos 
         print("En construccion")
     elif op==6:
         print(fechas)
