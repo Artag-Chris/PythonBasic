@@ -41,3 +41,19 @@ def valores(*args):
         print(f" {i}  " ,end=" ")
 
 valores(1,2,3,4,5,"chris",[1.2,2.3,"alejandro"], 6,7,8,9,{"perro" : "husky", "diccionario2": {"perro" : "siberian"}}, 10,11 )
+def swap(listat, x, y):
+    temp=listat[x]
+    listat[x] = listat[y]
+    listat[y] = temp
+
+def selectionSort(aList):
+    for i in range(len(aList)):
+        print(i)
+        least = i
+        for k in range(i+1,len(aList)):
+            if aList[k] < aList[least]:
+                least=k
+
+            swap(aList,least,i)
+
+print(selectionSort(valores))
