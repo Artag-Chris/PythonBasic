@@ -46,14 +46,14 @@ def swap(listat, x, y):
     listat[x] = listat[y]
     listat[y] = temp
 
-def selectionSort(aList):
-    for i in range(len(aList)):
-        print(i)
-        least = i
-        for k in range(i+1,len(aList)):
-            if aList[k] < aList[least]:
-                least=k
+# def selectionSort(aList):
+#     for i in range(len(aList)):
+#         print(i)
+#         least = i
+#         for k in range(i+1,len(aList)):
+#             if aList[k] < aList[least]:
+#                 least=k
 
-            swap(aList,least,i)
+#             swap(aList,least,i)
 
-print(selectionSort(valores))
+print(selectionSort(diccionario))

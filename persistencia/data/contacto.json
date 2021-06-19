@@ -1,0 +1,36 @@
+{
+    "data": [
+        {
+            "nombre": "Johlver Pardo",
+            "email": "jjpardo",
+            "movil": "23444",
+            "direcciones": {
+                "0": {
+                    "ciudad": "Buc",
+                    "direccion": "cra 23"
+                }
+            },
+            "hobbies": {
+                "0": {
+                    "hobbie": "Correr"
+                }
+            }
+        },
+        {
+            "nombre": "Jose Manuel",
+            "email": "jm@hotmail.com",
+            "movil": "5666",
+            "direcciones": {
+                "0": {
+                    "ciudad": "bog",
+                    "direccion": "cr"
+                }
+            },
+            "hobbies": {
+                "0": {
+                    "hobbie": "Jugar pc"
+                }
+            }
+        }
+    ]
+}
