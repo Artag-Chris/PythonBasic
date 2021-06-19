@@ -1,10 +1,6 @@
 import os
 import time
 from operator import *
-#mejorar front-end
-#adecuar opciones del menu colocar print de jugadores y de distintas fechas y ordenes de equipo 
-#usar metodo de ljust o rjust 
-#
 equipo={}
 fecha={}
 isMenuActive=True
