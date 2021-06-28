@@ -1,0 +1,56 @@
+{
+    "first": {
+        "Name": "Pikachu",
+        "attacks": [
+            "ThunderShock",
+            "Quick Attack",
+            "fly",
+            "Energy Ball"
+        ],
+        "stats": {
+            "Level": 20,
+            "Health Points": 35,
+            "Attack": 28,
+            "Defence": 17,
+            "Special Attack": 31,
+            "Special Defence": 27,
+            "Speed": 33
+        }
+    },
+    "second": {
+        "Name": "Bulbasaur",
+        "attacks": [
+            "Vine Whip",
+            "Seed Bomb",
+            "Double-Edge",
+            "Sweet Scent"
+        ],
+        "stats": {
+            "Level": 20,
+            "Health Points": 30,
+            "Attack": 17,
+            "Defence": 20,
+            "Special Attack": 30,
+            "Special Defence": 25,
+            "Speed": 25
+        }
+    },
+    "third": {
+        "Name": "Charmander",
+        "attacks": [
+            "Ember",
+            "Dragon Breath",
+            "Slash",
+            "Thunder Punch"
+        ],
+        "stats": {
+            "Level": 20,
+            "Health Points": 33,
+            "Attack": 29,
+            "Defence": 15,
+            "Special Attack": 20,
+            "Special Defence": 25,
+            "Speed": 30
+        }
+    }
+}

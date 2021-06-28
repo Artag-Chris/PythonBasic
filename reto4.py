@@ -65,7 +65,7 @@ while isMenuActive==True:
         for key, valorc in equipo.items():
             #si la key "llave" es igual a palabra(input) hace lo siguiente
             if str(key) == palabra.upper():
-                #este valor toma un numero que es la longitud que tiene el value de "ubicacion" si esta vacio sera 0
+                #este valor toma un numero que es la longitud que tiene el value de "jugadores" si esta vacio sera 0
                 valor=len(valorc["jugadores"])
                 nombreJugador=input("Ingrese nombre del Jugador para registrar : ")
                 posicion=input("Ingrese posicion para registrar : ")

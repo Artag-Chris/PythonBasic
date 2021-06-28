@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "nombre": "chris",
+            "email": "scrist@gmail.com",
+            "movil": "3205711428",
+            "direcciones": {
+                "0": {
+                    "ciudad": "pereira",
+                    "direccion": "car 23 57-72"
+                }
+            },
+            "hobbies": {
+                "0": {
+                    "hobbie": "videogames"
+                }
+            }
+        }
+    ]
+}
